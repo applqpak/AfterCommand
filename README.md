@@ -1,2 +1,2 @@
 # AfterCommand
-Fun A Command As Console After x Seconds!
+Run A Command As Console After x Seconds!
