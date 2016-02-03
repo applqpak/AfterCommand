@@ -55,7 +55,7 @@
             
           }
           
-          $sender->sendMessage(TF::GREEN . "Command will run in " . $timeout . "!");
+          $sender->sendMessage(TF::GREEN . "Command will run in " . $timeout . " second(s)!");
           
           run();
           
