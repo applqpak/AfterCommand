@@ -33,6 +33,8 @@
 
         $this->getServer()->dispatchCommand(new ConsoleCommandSender, $cmd);
 
+        $a = 0; 
+
       }
 
     }
