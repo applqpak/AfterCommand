@@ -23,7 +23,7 @@
       
         if(!(isset($args[0]) and isset($args[1]))) {
         
-          $sender->sendMessage(TF::RED . "Error: not enough args. Usage: /after <seconds> <command");
+          $sender->sendMessage(TF::RED . "Error: not enough args. Usage: /after <seconds> <command>");
           
           return true;
           
