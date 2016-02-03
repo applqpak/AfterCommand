@@ -16,6 +16,26 @@
       $this->getServer()->getPluginManager()->registerEvents($this, $this);
       
     }
+
+    public function run($seconds, $cmd) {
+
+      static $count = 0;
+
+      $count++;
+
+      if($count < $seconds) {
+
+        sleep(1);
+
+        self::run($seconds, $cmd);
+
+      } else {
+
+        $this->getServer()->dispatchCommand(new ConsoleCommandSender, $cmd);
+
+      }
+
+    }
     
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args) {
     
@@ -35,29 +55,9 @@
           
           $command = implode(" ", $args);
           
-          function run() {
-          
-            static $count = 0;
-            
-            $count++;
-            
-            if($count < $timeout) {
-            
-              sleep(1);
-              
-              run();
-              
-            } else {
-            
-              $this->getServer()->dispatchCommand(new ConsoleCommandSender, $command);
-              
-            }
-            
-          }
-          
           $sender->sendMessage(TF::GREEN . "Command will run in " . $timeout . " second(s)!");
           
-          run();
+          $this->run($timeout, $command);
           
           return true;
           
