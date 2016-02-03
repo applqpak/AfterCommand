@@ -1,0 +1,13 @@
+name: AfterCommand
+version: 1.0.0
+author: applqpak
+api: [1.0.0]
+main: AfterCommand\Main
+commands:
+  after:
+    description: Run A Command As Console After x Seconds!
+    usage: "/after <seconds> <command>"
+    permission: aftercommand.command.after
+permissions:
+  aftercommand.command.after:
+    default: op
